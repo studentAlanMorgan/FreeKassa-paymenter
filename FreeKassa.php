@@ -23,7 +23,7 @@ class FreeKassa extends Gateway
             'display_name' => 'FreeKassa',
             'version'      => '3.0.0',
             'author'       => 'BHVPS',
-            'website'      => 'https://freekassa.ru',
+            'website'      => 'https://freekassa.net',
         ];
     }
 
@@ -80,7 +80,7 @@ class FreeKassa extends Gateway
             'em'       => $invoice->user->email ?? '',
         ];
 
-        return 'https://pay.freekassa.ru/?' . http_build_query($params);
+        return 'https://pay.freekassa.net/?' . http_build_query($params);
     }
 
     public function webhook(Request $request)
@@ -142,4 +142,5 @@ class FreeKassa extends Gateway
             return response('Internal Error', 500);
         }
     }
+
 }
